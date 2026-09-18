@@ -1,14 +1,16 @@
 import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "outline" | "ghost" | "link";
   size?: "default" | "sm" | "lg" | "icon";
   isLoading?: boolean;
+  asChild?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className = "", variant = "default", size = "default", isLoading, children, ...props }, ref) => {
+  ({ className = "", variant = "default", size = "default", isLoading, asChild = false, children, ...props }, ref) => {
     
     // Classes base
     let baseStyles = "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50"
@@ -31,8 +33,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`
 
+    const Comp = asChild ? Slot : "button"
+
     return (
-      <button
+      <Comp
         className={classes}
         ref={ref}
         disabled={isLoading || props.disabled}
@@ -42,7 +46,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
         ) : null}
         {children}
-      </button>
+      </Comp>
     )
   }
 )
