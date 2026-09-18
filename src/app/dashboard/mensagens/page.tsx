@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/Card"
 import { Button } from "@/components/ui/Button"
-import { Send, Paperclip, MoreVertical, LayoutDashboard } from "lucide-react"
+import Link from "next/link"
+import { Send, Paperclip } from "lucide-react"
 
 export default function MensagensPage() {
   const mensagens = [
@@ -39,7 +40,7 @@ export default function MensagensPage() {
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Mensagens</h1>
           <p className="text-sm text-foreground/60 flex items-center gap-2 mt-1">
-            Projeto: <a href="/dashboard/projetos/123" className="text-primary hover:underline font-medium">Seu Aplicativo Mobile</a>
+            Projeto: <Link href="/dashboard/projetos/123" className="text-primary hover:underline font-medium">Seu Aplicativo Mobile</Link>
           </p>
         </div>
       </div>

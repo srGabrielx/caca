@@ -1,6 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
-import { Home, LayoutDashboard, Send, Wallet, Users, Settings, LogOut, Activity } from "lucide-react"
+import { LayoutDashboard, Send, Wallet, Users, Settings, LogOut, Activity } from "lucide-react"
 
 export default function AdminLayout({
   children,

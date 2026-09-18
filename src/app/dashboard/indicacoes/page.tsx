@@ -1,8 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/Card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Progress } from "@/components/ui/Progress"
 import { Button } from "@/components/ui/Button"
-import { StatusBadge } from "@/components/ui/StatusBadge"
-import { Users, Target, DollarSign, Percent, ArrowRight, ShieldCheck, ChevronRight } from "lucide-react"
+import { StatusBadge, type StatusBadgeProps } from "@/components/ui/StatusBadge"
+import { Users, Target, DollarSign, Percent, ShieldCheck, ChevronRight } from "lucide-react"
 import Link from "next/link"
 
 export default function IndicacoesPage() {
@@ -113,7 +113,7 @@ export default function IndicacoesPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <StatusBadge status={item.badge as any}>{item.status}</StatusBadge>
+                    <StatusBadge status={item.badge as StatusBadgeProps["status"]}>{item.status}</StatusBadge>
                     <ChevronRight className="w-5 h-5 text-foreground/30 group-hover:text-primary transition-colors" />
                   </div>
                 </CardContent>

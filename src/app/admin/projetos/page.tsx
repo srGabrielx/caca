@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
-import { StatusBadge } from "@/components/ui/StatusBadge"
+import { Card } from "@/components/ui/Card"
+import { StatusBadge, type StatusBadgeProps } from "@/components/ui/StatusBadge"
 import { Button } from "@/components/ui/Button"
 import { Filter, Search, Plus, MoreHorizontal } from "lucide-react"
 
@@ -57,7 +57,7 @@ export default function AdminProjetosPage() {
                   <td className="px-6 py-4 font-medium">{prj.client}</td>
                   <td className="px-6 py-4 text-foreground/70">{prj.service}</td>
                   <td className="px-6 py-4">
-                    <StatusBadge status={prj.badge as any}>{prj.status}</StatusBadge>
+                    <StatusBadge status={prj.badge as StatusBadgeProps["status"]}>{prj.status}</StatusBadge>
                   </td>
                   <td className="px-6 py-4 text-right">
                     <Button variant="ghost" size="icon" className="h-8 w-8 text-foreground/50 hover:text-foreground">

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/Card"
 import { Button } from "@/components/ui/Button"
-import { StatusBadge } from "@/components/ui/StatusBadge"
+import { StatusBadge, type StatusBadgeProps } from "@/components/ui/StatusBadge"
 import { Wallet, ArrowDownLeft, Landmark, Plus, Info, KeyRound } from "lucide-react"
 
 export default function GanhosPage() {
@@ -73,7 +73,7 @@ export default function GanhosPage() {
                   </div>
                   <div className="flex items-center gap-4 sm:justify-end">
                     <span className={`font-bold ${item.isSaque ? 'text-foreground' : 'text-green-600 dark:text-green-500'}`}>{item.valor}</span>
-                    <StatusBadge status={item.badge as any}>{item.status}</StatusBadge>
+                    <StatusBadge status={item.badge as StatusBadgeProps["status"]}>{item.status}</StatusBadge>
                   </div>
                 </div>
               ))}

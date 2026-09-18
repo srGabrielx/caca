@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Button } from "@/components/ui/Button"
 import { ArrowLeft, Layout, Smartphone, Settings, Sparkles, HelpCircle, CheckCircle2 } from "lucide-react"
+import Link from "next/link"
 
 type Step = 1 | 2 | 3 | 4
 
@@ -142,10 +143,10 @@ export default function SolicitarProjetoPage() {
             </p>
             <div className="pt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <Button variant="outline" asChild>
-                <a href="/dashboard">Acompanhar pedido</a>
+                <Link href="/dashboard">Acompanhar pedido</Link>
               </Button>
               <Button asChild>
-                <a href="/dashboard/mensagens">Enviar mensagem</a>
+                <Link href="/dashboard/mensagens">Enviar mensagem</Link>
               </Button>
             </div>
           </div>

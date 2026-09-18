@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle2, Layout, Smartphone, Settings, Sparkles, Send } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -13,12 +14,12 @@ export default function Home() {
           Sites, aplicativos, sistemas e automações construídos para o seu negócio.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 pt-8 w-full justify-center">
-          <button className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity text-lg flex items-center justify-center gap-2">
+          <Link href="/dashboard/solicitar" className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity text-lg flex items-center justify-center gap-2">
             Quero meu projeto <ArrowRight className="w-5 h-5" />
-          </button>
-          <button className="bg-card text-card-foreground border border-border px-8 py-4 rounded-full font-semibold hover:bg-border/50 transition-colors text-lg">
+          </Link>
+          <Link href="/dashboard/indicacoes/nova" className="bg-card text-card-foreground border border-border px-8 py-4 rounded-full font-semibold hover:bg-border/50 transition-colors text-lg">
             Indique e ganhe
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -78,9 +79,9 @@ export default function Home() {
           <span className="hidden md:inline text-border">→</span>
           <span className="flex items-center gap-2 text-primary font-bold"><Sparkles className="w-5 h-5" /> Comissão</span>
         </div>
-        <button className="bg-foreground text-background px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity text-lg flex items-center justify-center gap-2 mx-auto">
+        <Link href="/dashboard/indicacoes/nova" className="bg-foreground text-background px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity text-lg flex items-center justify-center gap-2 mx-auto">
           Começar a indicar <Send className="w-5 h-5" />
-        </button>
+        </Link>
       </section>
     </main>
   );
